@@ -1,0 +1,49 @@
+<div class="col-md-6">
+  <h2> Trade Details</h2>
+  <button class="btn btn-danger" (click)="addTrade()"> Add Trade</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden"></th>
+      <th>Market</th>
+      <th>Timeframe</th>
+      <th>Strategy</th>
+      <th>Review - open</th>
+      <th>Open</th>
+      <th>Qty</th>
+      <th>Date</th>
+      <th>Target</th>
+      <th>Stop loss</th>
+      <th>Max. loss</th>
+      <th>Close</th>
+      <th>Qty closed</th>
+      <th>PL</th>
+      <th>Review - close</th>
+      <th>Mistakes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let trade of trades">
+      <td class="hidden"></td>
+      <td>{{trade.code}}</td>
+      <td>{{trade.market}}</td>
+      <td>{{trade.timeframe}}</td>
+      <td>{{trade.strategy}}</td>
+      <td>{{trade.open_review}}</td>
+      <td>{{trade.open_at}}</td>
+      <td>{{trade.qty}}</td>
+      <td>{{trade.open_trade}}</td>
+      <td>{{trade.target}}</td>
+      <td>{{trade.stoploss}}</td>
+      <td>{{trade.max_loss}}</td>
+      <td>{{trade.close_at}}</td>
+      <td>{{trade.qty_close}}</td>
+      <td>{{trade.pl}}</td>
+      <td>{{trade.close_review}}</td>
+      <td>{{trade.mistakes}}</td>
+      <td><button class="btn btn-danger" (click)="deleteTrade(trade)"> Delete</button>
+        <button class="btn btn-danger" (click)="editTrade(trade)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

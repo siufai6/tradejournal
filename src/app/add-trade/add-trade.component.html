@@ -1,0 +1,48 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Trade</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="code">Code:</label>
+      <input type="code" formControlName="code" placeholder="code of instrument" name="code" class="form-control" id="code">
+    </div>
+
+
+    <div class="form-group">
+      <label for="timeframe">Time frame:</label>
+      <!-- <input formControlName="timeframe" placeholder="Timeframe of trade, WEEKLY, DAILY" name="timeframe" class="form-control" id="timeframe"> -->
+        <input formControlName="timeframe" 
+            [typeahead]="timeframes"
+            class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="strategy">Strategy:</label>
+      <input formControlName="strategy" placeholder="Trade strategy" name="strategy" class="form-control" id="strategy">
+    </div>
+    <div class="form-group">
+      <label for="opendate">Open on date:</label>
+      <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" readonly style="background-color: white;" class="form-control input-lg" id="open_date" placeholder="YYYY-MM-DD" formControlName="open_date">
+    </div>
+    <div class="form-group">
+      <label for="qty">Quantity:</label>
+      <input formControlName="qty" placeholder="Quantity traded" name="qty" class="form-control" id="qty">
+    </div>
+    <div class="form-group">
+      <label for="open_at">Open price:</label>
+      <input formControlName="open_at" placeholder="Entry price" name="open_at" class="form-control" id="open_at">
+    </div>
+    <div class="form-group">
+      <label for="stoploss">Stop loss:</label>
+      <input formControlName="stoploss" placeholder="Stop loss" name="stoploss" class="form-control" id="stoploss">
+    </div>
+    <div class="form-group">
+      <label for="target">Target price:</label>
+      <input formControlName="target" placeholder="Target price" name="target" class="form-control" id="target">
+    </div>
+    <div class="form-group">
+      <label for="open_review">Comment on open trade:</label>
+      <input formControlName="open_review" placeholder="Why got in this trade? How's the execution done? Your emotions." name="open_review" class="form-control" id="open_review">
+    </div>
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>
